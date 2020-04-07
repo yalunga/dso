@@ -40,7 +40,7 @@ createConnection().then(async () => {
         res.status(409).send('Email is already in use.');
       }
     } catch (error) {
-      res.error(error);
+      res.status(500).send(error.message);
     }
   });
 
@@ -59,7 +59,7 @@ createConnection().then(async () => {
         res.status(400).send('User not found.');
       }
     } catch (error) {
-      res.error(error);
+      res.status(500).send(error.message);
     }
   });
 
